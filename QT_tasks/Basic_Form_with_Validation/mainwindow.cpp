@@ -9,21 +9,38 @@ MainWindow::MainWindow(QWidget *parent)
     m_lineEdit_lastName{new QLineEdit},
     m_lineEdit_mail{new QLineEdit},
     m_lineEdit_age{new QLineEdit},
+    m_lineEdit_phoneNumber{new QLineEdit},
     m_submit_button{new QPushButton("Submit")},
     m_central_widget{new QWidget}
 {
     ui->setupUi(this);
 
     m_formLayout->addRow("First Name: " , m_lineEdit_firstName.data());
+    QString name_example = "James";
+    m_lineEdit_firstName->setPlaceholderText(name_example);
+
     m_formLayout->addRow("Last Name: ", m_lineEdit_lastName.data());
+    QString lastName_example = "Smith";
+    m_lineEdit_lastName->setPlaceholderText(lastName_example);
+
+    m_formLayout->addRow("Phone Number: ", m_lineEdit_phoneNumber);
+    QString phone_example = "012 34 56 78";
+    m_lineEdit_phoneNumber->setPlaceholderText(phone_example);
+
     m_formLayout->addRow("Email: ", m_lineEdit_mail.data());
+    QString email_example("your_email@example.com");
+    m_lineEdit_mail->setPlaceholderText(email_example);
+
     m_formLayout->addRow("Age: ", m_lineEdit_age.data());
+    QString age_example = "27";
+    m_lineEdit_age->setPlaceholderText(age_example);
+
     m_formLayout->addWidget(m_submit_button.data());
 
     m_central_widget->setLayout(m_formLayout.data());
     setCentralWidget(m_central_widget.data());
 
-     connect(m_submit_button.data(), &QPushButton::clicked, this, &MainWindow::handleSubmitButtonClick);
+    connect(m_submit_button.data(), &QPushButton::clicked, this, &MainWindow::handleSubmitButtonClick);
 }
 
 MainWindow::~MainWindow()
@@ -43,7 +60,8 @@ void MainWindow::validateForm()
     if(m_lineEdit_firstName->text().isEmpty() &&
        m_lineEdit_lastName->text().isEmpty() &&
        m_lineEdit_mail->text().isEmpty() &&
-       m_lineEdit_age->text().isEmpty())
+       m_lineEdit_age->text().isEmpty() &&
+        m_lineEdit_phoneNumber->text().isEmpty())
     {
         QMessageBox::warning(this, "Error", "Please fill in all the fields.");
         return;
@@ -100,21 +118,28 @@ void MainWindow::validateForm()
     QRegExp emailRegex("\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b");
 
     QString email = m_lineEdit_mail->text();
-    if (email.contains(emailRegex))
-    {
-
-    }
-    else
+    if (!email.contains(emailRegex))
     {
         QMessageBox::warning(this, "Error", "Please enter a valid email address.");
         return;
     }
 
+    QRegExp phoneRegex("^\\d{3} \\d{2} \\d{2} \\d{2}$");
+
+    QString phoneNumber = m_lineEdit_phoneNumber->text();
+
+    if (!phoneNumber.contains(phoneRegex))
+    {
+        QMessageBox::warning(this, "Error", "Please enter a valid phone number.\n"
+                             "for example`\n"
+                             "012 45 67 89");
+        return;
+    }
 
     QMessageBox::information(this, "Success", "Form submitted successfully!");
-    m_map_of_inputs.insert("first_name", m_lineEdit_firstName->text());
-    m_map_of_inputs.insert("Last Name: ", m_lineEdit_lastName->text());
-    m_map_of_inputs.insert("Email: ", m_lineEdit_mail->text()),
-    m_map_of_inputs.insert("Age: ", m_lineEdit_age->text());
-
+    m_map_of_inputs.insert("First_name", m_lineEdit_firstName->text());
+    m_map_of_inputs.insert("Last_name", m_lineEdit_lastName->text());
+    m_map_of_inputs.insert("Email", m_lineEdit_mail->text()),
+    m_map_of_inputs.insert("Age", m_lineEdit_age->text());
+    m_map_of_inputs.insert("Phone_Number", m_lineEdit_phoneNumber->text());
 }

@@ -40,6 +40,7 @@ private:
     QScopedPointer<QLineEdit>   m_lineEdit_lastName;
     QScopedPointer<QLineEdit>   m_lineEdit_mail;
     QScopedPointer<QLineEdit>   m_lineEdit_age;
+    QLineEdit                  *m_lineEdit_phoneNumber;
     QScopedPointer<QPushButton> m_submit_button;
     QScopedPointer<QWidget>     m_central_widget;
     QMap<QString, QString>      m_map_of_inputs;
