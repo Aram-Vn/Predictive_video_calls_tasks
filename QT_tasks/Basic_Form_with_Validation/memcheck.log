@@ -1,0 +1,550 @@
+==11480== Memcheck, a memory error detector
+==11480== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==11480== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==11480== Command: ./Basic_Form_with_Validation
+==11480== Parent PID: 8922
+==11480== 
+==11480== 
+==11480== HEAP SUMMARY:
+==11480==     in use at exit: 401,606 bytes in 2,881 blocks
+==11480==   total heap usage: 125,259 allocs, 122,378 frees, 21,327,394 bytes allocated
+==11480== 
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,280 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871BD9: wl_proxy_marshal_flags (wayland-client.c:823)
+==11480==    by 0x93675DF: UnknownInlinedFun (wayland-wayland-client-protocol.h:1044)
+==11480==    by 0x93675DF: QtWaylandClient::QWaylandDisplay::QWaylandDisplay(QtWaylandClient::QWaylandIntegration*) (qwaylanddisplay.cpp:346)
+==11480==    by 0x935EEE4: QtWaylandClient::QWaylandIntegration::QWaylandIntegration() (qwaylandintegration.cpp:115)
+==11480==    by 0x48592DB: QtWaylandClient::QWaylandIntegrationPlugin::create(QString const&, QStringList const&) (main.cpp:59)
+==11480==    by 0x50471B0: QPlatformIntegrationFactory::create(QString const&, QStringList const&, int&, char**, QString const&) (qplatformintegrationfactory.cpp:71)
+==11480==    by 0x505453B: UnknownInlinedFun (qguiapplication.cpp:1223)
+==11480==    by 0x505453B: QGuiApplicationPrivate::createPlatformIntegration() (qguiapplication.cpp:1484)
+==11480==    by 0x5055A78: QGuiApplicationPrivate::createEventDispatcher() (qguiapplication.cpp:1501)
+==11480==    by 0x5826994: QCoreApplicationPrivate::init() (qcoreapplication.cpp:835)
+==11480==    by 0x5055B25: QGuiApplicationPrivate::init() (qguiapplication.cpp:1530)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_flags
+   fun:UnknownInlinedFun
+   fun:_ZN15QtWaylandClient15QWaylandDisplayC1EPNS_19QWaylandIntegrationE
+   fun:_ZN15QtWaylandClient19QWaylandIntegrationC1Ev
+   fun:_ZN15QtWaylandClient25QWaylandIntegrationPlugin6createERK7QStringRK11QStringList
+   fun:_ZN27QPlatformIntegrationFactory6createERK7QStringRK11QStringListRiPPcS2_
+   fun:UnknownInlinedFun
+   fun:_ZN22QGuiApplicationPrivate25createPlatformIntegrationEv
+   fun:_ZN22QGuiApplicationPrivate21createEventDispatcherEv
+   fun:_ZN23QCoreApplicationPrivate4initEv
+   fun:_ZN22QGuiApplicationPrivate4initEv
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,281 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x9389BD8: UnknownInlinedFun (qwayland-surface-extension.cpp:16)
+==11480==    by 0x9389BD8: QtWayland::wl_compositor::init(wl_registry*, int, int) (qwayland-wayland.cpp:217)
+==11480==    by 0x936852C: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:498)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480==    by 0x486EE72: dispatch_event.isra.0 (wayland-client.c:1631)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland13wl_compositor4initEP11wl_registryii
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,282 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x93882B8: UnknownInlinedFun (qwayland-surface-extension.cpp:16)
+==11480==    by 0x93882B8: QtWayland::zwp_tablet_manager_v2::init(wl_registry*, int, int) (qwayland-tablet-unstable-v2.cpp:45)
+==11480==    by 0x9379A03: QtWaylandClient::QWaylandTabletManagerV2::QWaylandTabletManagerV2(QtWaylandClient::QWaylandDisplay*, unsigned int, unsigned int) (qwaylandtabletv2.cpp:50)
+==11480==    by 0x9368B5D: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:518)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland21zwp_tablet_manager_v24initEP11wl_registryii
+   fun:_ZN15QtWaylandClient23QWaylandTabletManagerV2C1EPNS_15QWaylandDisplayEjj
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,283 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x9389FB8: UnknownInlinedFun (qwayland-surface-extension.cpp:16)
+==11480==    by 0x9389FB8: QtWayland::wl_shm::init(wl_registry*, int, int) (qwayland-wayland.cpp:343)
+==11480==    by 0x93796CF: QtWaylandClient::QWaylandShm::QWaylandShm(QtWaylandClient::QWaylandDisplay*, int, unsigned int) (qwaylandshm.cpp:49)
+==11480==    by 0x93686D9: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:500)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland6wl_shm4initEP11wl_registryii
+   fun:_ZN15QtWaylandClient11QWaylandShmC1EPNS_15QWaylandDisplayEij
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,284 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x938B648: UnknownInlinedFun (qwayland-surface-extension.cpp:16)
+==11480==    by 0x938B648: QtWayland::wl_seat::init(wl_registry*, int, int) (qwayland-wayland.cpp:1440)
+==11480==    by 0x935F191: QtWaylandClient::QWaylandInputDevice::QWaylandInputDevice(QtWaylandClient::QWaylandDisplay*, int, unsigned int) (qwaylandinputdevice.cpp:406)
+==11480==    by 0x935F4CB: UnknownInlinedFun (qwaylandintegration.cpp:445)
+==11480==    by 0x935F4CB: QtWaylandClient::QWaylandIntegration::createInputDevice(QtWaylandClient::QWaylandDisplay*, int, unsigned int) (qwaylandintegration.cpp:440)
+==11480==    by 0x93688AC: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:502)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland7wl_seat4initEP11wl_registryii
+   fun:_ZN15QtWaylandClient19QWaylandInputDeviceC1EPNS_15QWaylandDisplayEij
+   fun:UnknownInlinedFun
+   fun:_ZN15QtWaylandClient19QWaylandIntegration17createInputDeviceEPNS_15QWaylandDisplayEij
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,285 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x93874B8: UnknownInlinedFun (qwayland-surface-extension.cpp:16)
+==11480==    by 0x93874B8: QtWayland::zwp_primary_selection_device_manager_v1::init(wl_registry*, int, int) (qwayland-wp-primary-selection-unstable-v1.cpp:45)
+==11480==    by 0x9368BD5: UnknownInlinedFun (qwaylandprimaryselectionv1.cpp:55)
+==11480==    by 0x9368BD5: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:522)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480==    by 0x486EE72: dispatch_event.isra.0 (wayland-client.c:1631)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland39zwp_primary_selection_device_manager_v14initEP11wl_registryii
+   fun:UnknownInlinedFun
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,286 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x9DFD2FD: UnknownInlinedFun (qwayland-appmenu.cpp:16)
+==11480==    by 0x9DFD2FD: UnknownInlinedFun (qwayland-appmenu.cpp:45)
+==11480==    by 0x9DFD2FD: QWaylandClientExtensionTemplate<AppMenuManager>::bind(wl_registry*, int, int) (qwaylandclientextension.h:110)
+==11480==    by 0x937C337: QWaylandClientExtensionPrivate::handleRegistryGlobal(void*, wl_registry*, unsigned int, QString const&, unsigned int) (qwaylandclientextension.cpp:68)
+==11480==    by 0x9368479: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:550)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:UnknownInlinedFun
+   fun:_ZN31QWaylandClientExtensionTemplateI14AppMenuManagerE4bindEP11wl_registryii
+   fun:_ZN30QWaylandClientExtensionPrivate20handleRegistryGlobalEPvP11wl_registryjRK7QStringj
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,287 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x9DFD24D: UnknownInlinedFun (qwayland-appmenu.cpp:16)
+==11480==    by 0x9DFD24D: UnknownInlinedFun (qwayland-server-decoration-palette.cpp:45)
+==11480==    by 0x9DFD24D: QWaylandClientExtensionTemplate<ServerSideDecorationPaletteManager>::bind(wl_registry*, int, int) (qwaylandclientextension.h:110)
+==11480==    by 0x937C337: QWaylandClientExtensionPrivate::handleRegistryGlobal(void*, wl_registry*, unsigned int, QString const&, unsigned int) (qwaylandclientextension.cpp:68)
+==11480==    by 0x9368479: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:550)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:UnknownInlinedFun
+   fun:_ZN31QWaylandClientExtensionTemplateI34ServerSideDecorationPaletteManagerE4bindEP11wl_registryii
+   fun:_ZN30QWaylandClientExtensionPrivate20handleRegistryGlobalEPvP11wl_registryjRK7QStringj
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,288 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x9389698: UnknownInlinedFun (qwayland-surface-extension.cpp:16)
+==11480==    by 0x9389698: QtWayland::zxdg_output_manager_v1::init(wl_registry*, int, int) (qwayland-xdg-output-unstable-v1.cpp:45)
+==11480==    by 0x9370214: QtWaylandClient::QWaylandXdgOutputManagerV1::QWaylandXdgOutputManagerV1(QtWaylandClient::QWaylandDisplay*, unsigned int, unsigned int) (qwaylandscreen.cpp:58)
+==11480==    by 0x9368F8E: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:540)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland22zxdg_output_manager_v14initEP11wl_registryii
+   fun:_ZN15QtWaylandClient26QWaylandXdgOutputManagerV1C1EPNS_15QWaylandDisplayEjj
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,289 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x938BEC8: UnknownInlinedFun (qwayland-surface-extension.cpp:16)
+==11480==    by 0x938BEC8: QtWayland::wl_subcompositor::init(wl_registry*, int, int) (qwayland-wayland.cpp:2368)
+==11480==    by 0x93689D4: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:511)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480==    by 0x486EE72: dispatch_event.isra.0 (wayland-client.c:1631)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland16wl_subcompositor4initEP11wl_registryii
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,290 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871AB9: wl_proxy_marshal_constructor_versioned (wayland-client.c:1010)
+==11480==    by 0x9389528: UnknownInlinedFun (qwayland-surface-extension.cpp:16)
+==11480==    by 0x9389528: QtWayland::zwp_text_input_manager_v2::init(wl_registry*, int, int) (qwayland-text-input-unstable-v2.cpp:434)
+==11480==    by 0x9368D42: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:527)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480==    by 0x486EE72: dispatch_event.isra.0 (wayland-client.c:1631)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland25zwp_text_input_manager_v24initEP11wl_registryii
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+==11480== 96 bytes in 1 blocks are definitely lost in loss record 2,291 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x4870C94: UnknownInlinedFun (wayland-private.h:234)
+==11480==    by 0x4870C94: proxy_create (wayland-client.c:446)
+==11480==    by 0x4870E30: UnknownInlinedFun (wayland-client.c:703)
+==11480==    by 0x4870E30: wl_proxy_marshal_array_flags (wayland-client.c:870)
+==11480==    by 0x4871BD9: wl_proxy_marshal_flags (wayland-client.c:823)
+==11480==    by 0x938961D: UnknownInlinedFun (wayland-text-input-unstable-v2-client-protocol.h:960)
+==11480==    by 0x938961D: QtWayland::zwp_text_input_manager_v2::get_text_input(wl_seat*) (qwayland-text-input-unstable-v2.cpp:466)
+==11480==    by 0x9368E06: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:529)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480==    by 0x486EE72: dispatch_event.isra.0 (wayland-client.c:1631)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_flags
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland25zwp_text_input_manager_v214get_text_inputEP7wl_seat
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+==11480== 336 bytes in 1 blocks are possibly lost in loss record 2,320 of 2,347
+==11480==    at 0x484A993: calloc (vg_replace_malloc.c:1595)
+==11480==    by 0x40116B2: calloc (rtld-malloc.h:44)
+==11480==    by 0x40116B2: allocate_dtv (dl-tls.c:370)
+==11480==    by 0x4012111: _dl_allocate_tls (dl-tls.c:629)
+==11480==    by 0x5EDD028: allocate_stack (allocatestack.c:429)
+==11480==    by 0x5EDD028: pthread_create@@GLIBC_2.34 (pthread_create.c:655)
+==11480==    by 0x567CD44: QThread::start(QThread::Priority) (qthread_unix.cpp:700)
+==11480==    by 0x94EA797: UnknownInlinedFun (qdbusconnection.cpp:152)
+==11480==    by 0x94EA797: UnknownInlinedFun (qdbusconnection.cpp:77)
+==11480==    by 0x94EA797: UnknownInlinedFun (qdbusconnection.cpp:77)
+==11480==    by 0x94EA797: QGlobalStatic<QDBusConnectionManager, (anonymous namespace)::Q_QGS__q_manager::innerFunction(), (anonymous namespace)::Q_QGS__q_manager::guard>::operator()() [clone .constprop.0] (qglobalstatic.h:138)
+==11480==    by 0x94A5AB7: QDBusConnection::sessionBus() (qdbusconnection.cpp:1188)
+==11480==    by 0x93EC0F5: QGenericUnixServices::QGenericUnixServices() (in /usr/lib/libQt5WaylandClient.so.5.15.12)
+==11480==    by 0x93765B1: QtWaylandClient::QWaylandWindowManagerIntegration::QWaylandWindowManagerIntegration(QtWaylandClient::QWaylandDisplay*) (qwaylandwindowmanagerintegration.cpp:76)
+==11480==    by 0x9367605: QtWaylandClient::QWaylandDisplay::QWaylandDisplay(QtWaylandClient::QWaylandIntegration*) (qwaylanddisplay.cpp:349)
+==11480==    by 0x935EEE4: QtWaylandClient::QWaylandIntegration::QWaylandIntegration() (qwaylandintegration.cpp:115)
+==11480==    by 0x48592DB: QtWaylandClient::QWaylandIntegrationPlugin::create(QString const&, QStringList const&) (main.cpp:59)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:calloc
+   fun:allocate_dtv
+   fun:_dl_allocate_tls
+   fun:allocate_stack
+   fun:pthread_create@@GLIBC_2.34
+   fun:_ZN7QThread5startENS_8PriorityE
+   fun:UnknownInlinedFun
+   fun:UnknownInlinedFun
+   fun:UnknownInlinedFun
+   fun:_ZN13QGlobalStaticI22QDBusConnectionManagerL_ZN12_GLOBAL__N_116Q_QGS__q_manager13innerFunctionEvEL_ZNS2_5guardEEEclEv.constprop.0
+   fun:_ZN15QDBusConnection10sessionBusEv
+   fun:_ZN20QGenericUnixServicesC1Ev
+   fun:_ZN15QtWaylandClient32QWaylandWindowManagerIntegrationC1EPNS_15QWaylandDisplayE
+   fun:_ZN15QtWaylandClient15QWaylandDisplayC1EPNS_19QWaylandIntegrationE
+   fun:_ZN15QtWaylandClient19QWaylandIntegrationC1Ev
+   fun:_ZN15QtWaylandClient25QWaylandIntegrationPlugin6createERK7QStringRK11QStringList
+}
+==11480== 1,218 (112 direct, 1,106 indirect) bytes in 1 blocks are definitely lost in loss record 2,336 of 2,347
+==11480==    at 0x4843F73: operator new(unsigned long) (vg_replace_malloc.c:483)
+==11480==    by 0x9380678: QtWaylandClient::QWaylandDataDeviceManager::getDataDevice(QtWaylandClient::QWaylandInputDevice*) (qwaylanddatadevicemanager.cpp:72)
+==11480==    by 0x938077F: QtWaylandClient::QWaylandDataDeviceManager::QWaylandDataDeviceManager(QtWaylandClient::QWaylandDisplay*, int, unsigned int) (qwaylanddatadevicemanager.cpp:61)
+==11480==    by 0x9368841: QtWaylandClient::QWaylandDisplay::registry_global(unsigned int, QString const&, unsigned int) (qwaylanddisplay.cpp:506)
+==11480==    by 0x9386575: QtWayland::wl_registry::handle_global(void*, wl_registry*, unsigned int, char const*, unsigned int) (qwayland-wayland.cpp:94)
+==11480==    by 0x4880595: ffi_call_unix64 (unix64.S:104)
+==11480==    by 0x487D00D: ffi_call_int.lto_priv.0 (ffi64.c:673)
+==11480==    by 0x487FBD2: ffi_call (ffi64.c:710)
+==11480==    by 0x486E644: wl_closure_invoke.constprop.0 (connection.c:1025)
+==11480==    by 0x486EE72: dispatch_event.isra.0 (wayland-client.c:1631)
+==11480==    by 0x486F13B: UnknownInlinedFun (wayland-client.c:1777)
+==11480==    by 0x486F13B: wl_display_dispatch_queue_pending (wayland-client.c:2019)
+==11480==    by 0x4871CEF: wl_display_roundtrip_queue (wayland-client.c:1403)
+==11480== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:_Znwm
+   fun:_ZN15QtWaylandClient25QWaylandDataDeviceManager13getDataDeviceEPNS_19QWaylandInputDeviceE
+   fun:_ZN15QtWaylandClient25QWaylandDataDeviceManagerC1EPNS_15QWaylandDisplayEij
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+   fun:UnknownInlinedFun
+   fun:wl_display_dispatch_queue_pending
+   fun:wl_display_roundtrip_queue
+}
+==11480== LEAK SUMMARY:
+==11480==    definitely lost: 1,264 bytes in 13 blocks
+==11480==    indirectly lost: 1,106 bytes in 17 blocks
+==11480==      possibly lost: 336 bytes in 1 blocks
+==11480==    still reachable: 396,884 bytes in 2,829 blocks
+==11480==         suppressed: 0 bytes in 0 blocks
+==11480== Reachable blocks (those to which a pointer was found) are not shown.
+==11480== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==11480== 
+==11480== For lists of detected and suppressed errors, rerun with: -s
+==11480== ERROR SUMMARY: 14 errors from 14 contexts (suppressed: 0 from 0)

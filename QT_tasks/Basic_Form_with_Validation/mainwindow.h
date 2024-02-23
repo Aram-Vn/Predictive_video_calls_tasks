@@ -34,15 +34,15 @@ private:
     void validateForm();
 
 private:
-    Ui::MainWindow              *ui;
-    QFormLayout* m_formLayout;
-    QLineEdit*   m_lineEdit_firstName;
-    QLineEdit*  m_lineEdit_lastName;
-    QLineEdit*   m_lineEdit_mail;
-    QLineEdit *  m_lineEdit_age;
-    QLineEdit*   m_lineEdit_phoneNumber;
-    QPushButton* m_submit_button;
-    QWidget*     m_central_widget;
-    QMap<QString, QString>      m_map_of_inputs;
+    Ui::MainWindow          *ui;
+    QFormLayout             *m_formLayout;
+    QLineEdit               *m_lineEdit_firstName;
+    QLineEdit               *m_lineEdit_lastName;
+    QLineEdit               *m_lineEdit_mail;
+    QLineEdit               *m_lineEdit_age;
+    QLineEdit               *m_lineEdit_phoneNumber;
+    QPushButton             *m_submit_button;
+    QWidget                 *m_central_widget;
+    QMap<QString, QString>   m_map_of_inputs;
 };
 #endif // MAINWINDOW_H

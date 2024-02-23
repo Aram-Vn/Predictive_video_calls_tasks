@@ -12,6 +12,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
+# add_compile_options(-fsanitize=address)
+# add_link_options(-fsanitize=address)
+configure_file(my_suppressions.supp ${CMAKE_CURRENT_BINARY_DIR}/my_suppressions.supp COPYONLY)
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -68,3 +72,25 @@ install(TARGETS Basic_Form_with_Validation
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Basic_Form_with_Validation)
 endif()
+
+
+# Enable testing in CMake
+enable_testing()
+
+# # Add a test that runs the executable with Memcheck for memory leak checking
+# add_test(
+#     NAME MemoryLeakTest
+#     COMMAND valgrind --tool=memcheck --leak-check=full --error-exitcode=1 $<TARGET_FILE:Basic_Form_with_Validation>
+# )
+
+# # Optionally, you can specify a working directory for the test
+# set_tests_properties(MemoryLeakTest PROPERTIES WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+
+# Add a test that runs the executable with Memcheck for memory leak checking
+add_test(
+    NAME MemoryLeakTest
+    COMMAND valgrind --tool=memcheck --leak-check=full --error-exitcode=1 --suppressions=${CMAKE_CURRENT_SOURCE_DIR}/my_suppressions.supp $<TARGET_FILE:Basic_Form_with_Validation>
+)
+
+# Optionally, you can specify a working directory for the test
+set_tests_properties(MemoryLeakTest PROPERTIES WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})

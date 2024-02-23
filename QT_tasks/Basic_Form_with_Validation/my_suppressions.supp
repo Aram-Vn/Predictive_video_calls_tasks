@@ -1,0 +1,287 @@
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_flags
+   fun:UnknownInlinedFun
+   fun:_ZN15QtWaylandClient15QWaylandDisplayC1EPNS_19QWaylandIntegrationE
+   fun:_ZN15QtWaylandClient19QWaylandIntegrationC1Ev
+   fun:_ZN15QtWaylandClient25QWaylandIntegrationPlugin6createERK7QStringRK11QStringList
+   fun:_ZN27QPlatformIntegrationFactory6createERK7QStringRK11QStringListRiPPcS2_
+   fun:UnknownInlinedFun
+   fun:_ZN22QGuiApplicationPrivate25createPlatformIntegrationEv
+   fun:_ZN22QGuiApplicationPrivate21createEventDispatcherEv
+   fun:_ZN23QCoreApplicationPrivate4initEv
+   fun:_ZN22QGuiApplicationPrivate4initEv
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland13wl_compositor4initEP11wl_registryii
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland21zwp_tablet_manager_v24initEP11wl_registryii
+   fun:_ZN15QtWaylandClient23QWaylandTabletManagerV2C1EPNS_15QWaylandDisplayEjj
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland6wl_shm4initEP11wl_registryii
+   fun:_ZN15QtWaylandClient11QWaylandShmC1EPNS_15QWaylandDisplayEij
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland7wl_seat4initEP11wl_registryii
+   fun:_ZN15QtWaylandClient19QWaylandInputDeviceC1EPNS_15QWaylandDisplayEij
+   fun:UnknownInlinedFun
+   fun:_ZN15QtWaylandClient19QWaylandIntegration17createInputDeviceEPNS_15QWaylandDisplayEij
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland39zwp_primary_selection_device_manager_v14initEP11wl_registryii
+   fun:UnknownInlinedFun
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:UnknownInlinedFun
+   fun:_ZN31QWaylandClientExtensionTemplateI14AppMenuManagerE4bindEP11wl_registryii
+   fun:_ZN30QWaylandClientExtensionPrivate20handleRegistryGlobalEPvP11wl_registryjRK7QStringj
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:UnknownInlinedFun
+   fun:_ZN31QWaylandClientExtensionTemplateI34ServerSideDecorationPaletteManagerE4bindEP11wl_registryii
+   fun:_ZN30QWaylandClientExtensionPrivate20handleRegistryGlobalEPvP11wl_registryjRK7QStringj
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland22zxdg_output_manager_v14initEP11wl_registryii
+   fun:_ZN15QtWaylandClient26QWaylandXdgOutputManagerV1C1EPNS_15QWaylandDisplayEjj
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland16wl_subcompositor4initEP11wl_registryii
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_constructor_versioned
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland25zwp_text_input_manager_v24initEP11wl_registryii
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   fun:UnknownInlinedFun
+   fun:proxy_create
+   fun:UnknownInlinedFun
+   fun:wl_proxy_marshal_array_flags
+   fun:wl_proxy_marshal_flags
+   fun:UnknownInlinedFun
+   fun:_ZN9QtWayland25zwp_text_input_manager_v214get_text_inputEP7wl_seat
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:calloc
+   fun:allocate_dtv
+   fun:_dl_allocate_tls
+   fun:allocate_stack
+   fun:pthread_create@@GLIBC_2.34
+   fun:_ZN7QThread5startENS_8PriorityE
+   fun:UnknownInlinedFun
+   fun:UnknownInlinedFun
+   fun:UnknownInlinedFun
+   fun:_ZN13QGlobalStaticI22QDBusConnectionManagerL_ZN12_GLOBAL__N_116Q_QGS__q_manager13innerFunctionEvEL_ZNS2_5guardEEEclEv.constprop.0
+   fun:_ZN15QDBusConnection10sessionBusEv
+   fun:_ZN20QGenericUnixServicesC1Ev
+   fun:_ZN15QtWaylandClient32QWaylandWindowManagerIntegrationC1EPNS_15QWaylandDisplayE
+   fun:_ZN15QtWaylandClient15QWaylandDisplayC1EPNS_19QWaylandIntegrationE
+   fun:_ZN15QtWaylandClient19QWaylandIntegrationC1Ev
+   fun:_ZN15QtWaylandClient25QWaylandIntegrationPlugin6createERK7QStringRK11QStringList
+}
+
+
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:_Znwm
+   fun:_ZN15QtWaylandClient25QWaylandDataDeviceManager13getDataDeviceEPNS_19QWaylandInputDeviceE
+   fun:_ZN15QtWaylandClient25QWaylandDataDeviceManagerC1EPNS_15QWaylandDisplayEij
+   fun:_ZN15QtWaylandClient15QWaylandDisplay15registry_globalEjRK7QStringj
+   fun:_ZN9QtWayland11wl_registry13handle_globalEPvP11wl_registryjPKcj
+   fun:ffi_call_unix64
+   fun:ffi_call_int.lto_priv.0
+   fun:ffi_call
+   fun:wl_closure_invoke.constprop.0
+   fun:dispatch_event.isra.0
+   fun:UnknownInlinedFun
+   fun:wl_display_dispatch_queue_pending
+   fun:wl_display_roundtrip_queue
+}
