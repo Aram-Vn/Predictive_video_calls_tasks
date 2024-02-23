@@ -15,11 +15,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    m_formLayout->addRow("First Name: " , m_lineEdit_firstName.data());
+    m_formLayout->addRow("First Name: " , m_lineEdit_firstName);
     QString name_example = "James";
     m_lineEdit_firstName->setPlaceholderText(name_example);
 
-    m_formLayout->addRow("Last Name: ", m_lineEdit_lastName.data());
+    m_formLayout->addRow("Last Name: ", m_lineEdit_lastName);
     QString lastName_example = "Smith";
     m_lineEdit_lastName->setPlaceholderText(lastName_example);
 
@@ -27,20 +27,20 @@ MainWindow::MainWindow(QWidget *parent)
     QString phone_example = "012 34 56 78";
     m_lineEdit_phoneNumber->setPlaceholderText(phone_example);
 
-    m_formLayout->addRow("Email: ", m_lineEdit_mail.data());
+    m_formLayout->addRow("Email: ", m_lineEdit_mail);
     QString email_example("your_email@example.com");
     m_lineEdit_mail->setPlaceholderText(email_example);
 
-    m_formLayout->addRow("Age: ", m_lineEdit_age.data());
+    m_formLayout->addRow("Age: ", m_lineEdit_age);
     QString age_example = "27";
     m_lineEdit_age->setPlaceholderText(age_example);
 
-    m_formLayout->addWidget(m_submit_button.data());
+    m_formLayout->addWidget(m_submit_button);
 
-    m_central_widget->setLayout(m_formLayout.data());
-    setCentralWidget(m_central_widget.data());
+    m_central_widget->setLayout(m_formLayout);
+    setCentralWidget(m_central_widget);
 
-    connect(m_submit_button.data(), &QPushButton::clicked, this, &MainWindow::handleSubmitButtonClick);
+    connect(m_submit_button, &QPushButton::clicked, this, &MainWindow::handleSubmitButtonClick);
 }
 
 MainWindow::~MainWindow()

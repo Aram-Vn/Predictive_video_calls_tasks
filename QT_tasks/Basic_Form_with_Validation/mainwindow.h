@@ -35,14 +35,14 @@ private:
 
 private:
     Ui::MainWindow              *ui;
-    QScopedPointer<QFormLayout> m_formLayout;
-    QScopedPointer<QLineEdit>   m_lineEdit_firstName;
-    QScopedPointer<QLineEdit>   m_lineEdit_lastName;
-    QScopedPointer<QLineEdit>   m_lineEdit_mail;
-    QScopedPointer<QLineEdit>   m_lineEdit_age;
-    QLineEdit                  *m_lineEdit_phoneNumber;
-    QScopedPointer<QPushButton> m_submit_button;
-    QScopedPointer<QWidget>     m_central_widget;
+    QFormLayout* m_formLayout;
+    QLineEdit*   m_lineEdit_firstName;
+    QLineEdit*  m_lineEdit_lastName;
+    QLineEdit*   m_lineEdit_mail;
+    QLineEdit *  m_lineEdit_age;
+    QLineEdit*   m_lineEdit_phoneNumber;
+    QPushButton* m_submit_button;
+    QWidget*     m_central_widget;
     QMap<QString, QString>      m_map_of_inputs;
 };
 #endif // MAINWINDOW_H
