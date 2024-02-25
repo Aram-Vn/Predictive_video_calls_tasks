@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: darkgrey;
+    margin: 0;
+    display: flex;
+    align-items:first baseline;
+    justify-content:left;
+    height: 100vh;
+}
+
+#itemList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hoverable {
+    cursor: pointer;
+}
